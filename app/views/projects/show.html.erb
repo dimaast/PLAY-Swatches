@@ -3,7 +3,11 @@
 <h1><%= @project.name %></h1>
 </p><%= @project.description %></p>
 
-<%= render @project.swatches %>
+<%= @project.swatches.each do |swatch| %>
+  <%= link_to swatch, class: "swatch"  do %>
+    <%= render swatch %>
+  <% end%>
+<% end%>
 
 <div>
   <%= link_to "Edit this project", edit_project_path(@project) %> |
