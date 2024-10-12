@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Fills" %>
+
+<h1>Fills</h1>
+
+<div class = "fills">
+  <% @fills.each do |fill| %>
+    <%= link_to fill, class: "card" do %>
+      <div class = "fillColor" style="background-color: #<%= fill.color %>"></div>
+      <h2><%= fill.name %></h2>
+      <p><%= fill.color %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New fill", new_fill_path %>
